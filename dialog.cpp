@@ -17,7 +17,6 @@ Dialog::~Dialog()
 }
 void Dialog::calculate() {
     bool isAOK, isBOK;
-
     int a = ui->lineEditA->text().toInt(&isAOK);
     int b = ui->lineEditB->text().toInt(&isBOK);
     if(!isAOK) {
@@ -26,6 +25,21 @@ void Dialog::calculate() {
     }
     if(!isBOK) {
             QMessageBox::critical(this, "Ошибка", "B должно быть числом");
+            return;
+    }
+    if(a < 0){
+            // вывести сообщение об ошибке и завершить работу программы
+            QMessageBox::critical(this, "Ошибка", "A должно быть положительным числом");
+            return;
+    }
+    if (b < 0){
+            // вывести сообщение об ошибке и завершить работу программы
+            QMessageBox::critical(this, "Ошибка", "B должно быть положительным числом");
+            return;
+    }
+    if (a > b){
+            // вывести сообщение об ошибке и завершить работу программы
+            QMessageBox::critical(this, "Ошибка", "A должно быть больше B");
             return;
     }
     // вызов функции получения списка простых чисел
