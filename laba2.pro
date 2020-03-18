@@ -29,7 +29,6 @@ SOURCES += \
         dialog.cpp
 
 HEADERS += \
-        ../../laba_1/laba1.h \
         dialog.h
 
 FORMS += \
